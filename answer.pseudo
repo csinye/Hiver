@@ -1,0 +1,16 @@
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.Scanner; 
+public class HelloWorld{
+
+     public static void main(String []args){
+         System.out.println("Enter name");           //name input
+         Scanner scan = new Scanner(System.in);
+         String name = scan.next();
+         System.out.println(randInt(name,6,15));      //Calling function randInt and printing its return value   
+     }
+     public static String randInt(String name, int min, int max) {             
+        int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);      //generates random number between min and max   //max is exclusive so adding 1 to make inclusive
+
+    return name+" "+randomNum;              //return name and random number
+}
+}
